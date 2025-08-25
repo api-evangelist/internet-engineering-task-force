@@ -39,3 +39,32 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common:
+  - name: IETF | Introduction
+    description: 'null'
+    url: https://www.ietf.org/about/introduction/
+    type: About
+  - name: IETF | IETF mailing lists
+    description: 'null'
+    url: https://www.ietf.org/participate/lists/
+    type: Newsletter
+  - name: IETF | IETF Sponsorship
+    description: 'null'
+    url: https://www.ietf.org/support-us/sponsorship/
+    type: Sponsorship
+  - name: IETF | Upcoming meetings
+    description: 'null'
+    url: https://www.ietf.org/meeting/upcoming/
+    type: Meetings
+  - name: IETF | Security & privacy
+    description: 'null'
+    url: https://www.ietf.org/technologies/security/
+    type: Security
+  - name: IETF | Security & privacy
+    description: 'null'
+    url: https://www.ietf.org/technologies/security/
+    type: PrivacyPolicy
+  - name: IETF | Donate to the IETF
+    description: 'null'
+    url: https://www.ietf.org/support-us/donate-ietf/
+    type: Donations
