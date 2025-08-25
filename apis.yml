@@ -5,14 +5,13 @@ apis:
   - aid: internet-engineering-task-force:internet-engineering-task-force
     name: Internet Engineering Task Force
     tags:
-      - API
-    humanURL: ' https://www.ietf.org/'
+      - Internet
+      - Standards
+    humanURL: https://datatracker.ietf.org/api/
     properties:
-      - url: ' https://www.ietf.org/'
+      - url: https://datatracker.ietf.org/api/
         type: Documentation
-    description: >-
-      Stay tuned for the latest information on the next IETF meeting scheduled
-      for 01-07 November 2025 
+    description: An API for access IETF data tracker information.
 name: Internet Engineering Task Force
 tags:
   - Internet
@@ -20,6 +19,48 @@ tags:
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
+common:
+  - url: https://www.ietf.org/about/introduction/
+    name: IETF | Introduction
+    type: About
+    description: 'null'
+  - url: https://www.ietf.org/participate/lists/
+    name: IETF | IETF mailing lists
+    type: Newsletter
+    description: 'null'
+  - url: https://www.ietf.org/support-us/sponsorship/
+    name: IETF | IETF Sponsorship
+    type: Sponsorship
+    description: 'null'
+  - url: https://www.ietf.org/meeting/upcoming/
+    name: IETF | Upcoming meetings
+    type: Meetings
+    description: 'null'
+  - url: https://www.ietf.org/technologies/security/
+    name: IETF | Security & privacy
+    type: Security
+    description: 'null'
+  - url: https://www.ietf.org/technologies/security/
+    name: IETF | Security & privacy
+    type: PrivacyPolicy
+    description: 'null'
+  - url: https://www.ietf.org/support-us/donate-ietf/
+    name: IETF | Donate to the IETF
+    type: Donations
+    description: 'null'
+  - url: https://www.linkedin.com/company/internet-engineering-task-force/
+    name: LinkedIn
+    type: LinkedIn
+    description: 'null'
+  - url: https://www.youtube.com/ietf
+    name: Youtube
+    type: Youtube
+  - url: https://mastodon.online/@ietf
+    name: Mastodon
+    type: Mastodon
+  - url: https://github.com/ietf/
+    name: GitHub Organization
+    type: GitHubOrganization
 created: '2025-08-25'
 modified: '2025-08-25'
 position: Consuming
@@ -39,45 +80,3 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
-common:
-  - name: IETF | Introduction
-    description: 'null'
-    url: https://www.ietf.org/about/introduction/
-    type: About
-  - name: IETF | IETF mailing lists
-    description: 'null'
-    url: https://www.ietf.org/participate/lists/
-    type: Newsletter
-  - name: IETF | IETF Sponsorship
-    description: 'null'
-    url: https://www.ietf.org/support-us/sponsorship/
-    type: Sponsorship
-  - name: IETF | Upcoming meetings
-    description: 'null'
-    url: https://www.ietf.org/meeting/upcoming/
-    type: Meetings
-  - name: IETF | Security & privacy
-    description: 'null'
-    url: https://www.ietf.org/technologies/security/
-    type: Security
-  - name: IETF | Security & privacy
-    description: 'null'
-    url: https://www.ietf.org/technologies/security/
-    type: PrivacyPolicy
-  - name: IETF | Donate to the IETF
-    description: 'null'
-    url: https://www.ietf.org/support-us/donate-ietf/
-    type: Donations
-  - name: LinkedIn
-    description: 'null'
-    url: https://www.linkedin.com/company/internet-engineering-task-force/
-    type: LinkedIn
-  - name: Youtube
-    url: https://www.youtube.com/ietf
-    type: Youtube
-  - name: Mastodon
-    url: https://mastodon.online/@ietf
-    type: Mastodon
-  - name: GitHub Organization
-    url: https://github.com/ietf/
-    type: GitHubOrganization
