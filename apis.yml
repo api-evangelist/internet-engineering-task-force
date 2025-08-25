@@ -68,3 +68,16 @@ common:
     description: 'null'
     url: https://www.ietf.org/support-us/donate-ietf/
     type: Donations
+  - name: LinkedIn
+    description: 'null'
+    url: https://www.linkedin.com/company/internet-engineering-task-force/
+    type: LinkedIn
+  - name: Youtube
+    url: https://www.youtube.com/ietf
+    type: Youtube
+  - name: Mastodon
+    url: https://mastodon.online/@ietf
+    type: Mastodon
+  - name: GitHub Organization
+    url: https://github.com/ietf/
+    type: GitHubOrganization
