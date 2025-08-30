@@ -61,8 +61,11 @@ common:
   - url: https://github.com/ietf/
     name: GitHub Organization
     type: GitHubOrganization
+  - name: GitHub Organization Events
+    url: https://api.github.com/orgs/ietf/events
+    type: GitHubOrganizationEvents
 created: '2025-08-25'
-modified: '2025-08-25'
+modified: '2025-08-30'
 position: Consuming
 description: >-
   The Internet Engineering Task Force (IETF) is an open, global community of
@@ -72,9 +75,9 @@ description: >-
   organized by technical areas such as routing, security, transport, and
   applications, with a focus on producing practical, consensus-driven standards
   like the TCP/IP protocols, HTTP, and email formats. The IETF operates in a
-  highly collaborative and transparent wayanyone can participateand its
+  highly collaborative and transparent wayanyone can participateand its
   standards are published as freely accessible RFCs (Requests for Comments),
-  which serve as the foundation for the internets interoperability and
+  which serve as the foundation for the internets interoperability and
   scalability.
 maintainers:
   - FN: Kin Lane
