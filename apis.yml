@@ -10,9 +10,9 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Internet
-  - Standards
-  - RFC
   - Protocols
+  - RFC
+  - Standards
 url: >-
   https://raw.githubusercontent.com/api-evangelist/internet-engineering-task-force/refs/heads/main/apis.yml
 created: '2025-08-25'
@@ -27,9 +27,9 @@ apis:
       information.
     humanURL: https://datatracker.ietf.org/api/
     tags:
-      - Standards
-      - RFC
       - Internet
+      - RFC
+      - Standards
     properties:
       - type: Documentation
         url: https://datatracker.ietf.org/api/
