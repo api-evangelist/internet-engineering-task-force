@@ -41,6 +41,8 @@ apis:
         url: https://datatracker.ietf.org/api/
       - type: SignUp
         url: https://datatracker.ietf.org/accounts/login/
+      - url: openapi/internet-engineering-task-force-openapi.yml
+        type: OpenAPI
   - aid: internet-engineering-task-force:rfc-editor
     name: RFC Editor
     description: >-
