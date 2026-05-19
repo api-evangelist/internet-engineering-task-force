@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IETF Datatracker API — IESG
+  description: 'IETF Datatracker API — IESG. 1 operations. Lead operation: Set an IESG ballot position. Self-contained Naftiko
+    capability covering one Internet Engineering Task Force business surface.'
+  tags:
+  - Internet Engineering Task Force
+  - IESG
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNET_ENGINEERING_TASK_FORCE_API_KEY: INTERNET_ENGINEERING_TASK_FORCE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: internet-engineering-task-force-iesg
+    baseUri: https://datatracker.ietf.org
+    description: IETF Datatracker API — IESG business capability. Self-contained, no shared references.
+    resources:
+    - name: api-iesg-position
+      path: /api/iesg/position
+      operations:
+      - name: setiesgposition
+        method: POST
+        description: Set an IESG ballot position
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.INTERNET_ENGINEERING_TASK_FORCE_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: internet-engineering-task-force-iesg-rest
+    port: 8080
+    description: REST adapter for IETF Datatracker API — IESG. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/iesg/position
+      name: api-iesg-position
+      description: REST surface for api-iesg-position.
+      operations:
+      - method: POST
+        name: setiesgposition
+        description: Set an IESG ballot position
+        call: internet-engineering-task-force-iesg.setiesgposition
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: internet-engineering-task-force-iesg-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IETF Datatracker API — IESG. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: set-iesg-ballot-position
+      description: Set an IESG ballot position
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: internet-engineering-task-force-iesg.setiesgposition
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

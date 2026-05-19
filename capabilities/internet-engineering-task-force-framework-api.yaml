@@ -1,0 +1,189 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IETF Datatracker API — Framework API
+  description: 'IETF Datatracker API — Framework API. 3 operations. Lead operation: List resources for a model (Tastypie framework
+    API). Self-contained Naftiko capability covering one Internet Engineering Task Force business surface.'
+  tags:
+  - Internet Engineering Task Force
+  - Framework API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNET_ENGINEERING_TASK_FORCE_API_KEY: INTERNET_ENGINEERING_TASK_FORCE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: internet-engineering-task-force-framework-api
+    baseUri: https://datatracker.ietf.org
+    description: IETF Datatracker API — Framework API business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-model-resource
+      path: /api/v1/{model}/{resource}/
+      operations:
+      - name: listresource
+        method: GET
+        description: List resources for a model (Tastypie framework API)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: model
+          in: path
+          type: string
+          description: Datatracker model namespace (e.g. doc, group, person, meeting).
+          required: true
+        - name: resource
+          in: path
+          type: string
+          description: Resource name within the model namespace.
+          required: true
+        - name: format
+          in: query
+          type: string
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+    - name: api-v1-model-resource-id
+      path: /api/v1/{model}/{resource}/{id}/
+      operations:
+      - name: getresource
+        method: GET
+        description: Get a single resource by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: model
+          in: path
+          type: string
+          required: true
+        - name: resource
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: api-version
+      path: /api/version
+      operations:
+      - name: getversion
+        method: GET
+        description: Get Datatracker version
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.INTERNET_ENGINEERING_TASK_FORCE_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: internet-engineering-task-force-framework-api-rest
+    port: 8080
+    description: REST adapter for IETF Datatracker API — Framework API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/v1/{model}/{resource}
+      name: api-v1-model-resource
+      description: REST surface for api-v1-model-resource.
+      operations:
+      - method: GET
+        name: listresource
+        description: List resources for a model (Tastypie framework API)
+        call: internet-engineering-task-force-framework-api.listresource
+        with:
+          model: rest.model
+          resource: rest.resource
+          format: rest.format
+          limit: rest.limit
+          offset: rest.offset
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/{model}/{resource}/{id}
+      name: api-v1-model-resource-id
+      description: REST surface for api-v1-model-resource-id.
+      operations:
+      - method: GET
+        name: getresource
+        description: Get a single resource by ID
+        call: internet-engineering-task-force-framework-api.getresource
+        with:
+          model: rest.model
+          resource: rest.resource
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/version
+      name: api-version
+      description: REST surface for api-version.
+      operations:
+      - method: GET
+        name: getversion
+        description: Get Datatracker version
+        call: internet-engineering-task-force-framework-api.getversion
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: internet-engineering-task-force-framework-api-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IETF Datatracker API — Framework API. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-resources-model-tastypie-framework
+      description: List resources for a model (Tastypie framework API)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: internet-engineering-task-force-framework-api.listresource
+      with:
+        model: tools.model
+        resource: tools.resource
+        format: tools.format
+        limit: tools.limit
+        offset: tools.offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-single-resource-id
+      description: Get a single resource by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: internet-engineering-task-force-framework-api.getresource
+      with:
+        model: tools.model
+        resource: tools.resource
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-datatracker-version
+      description: Get Datatracker version
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: internet-engineering-task-force-framework-api.getversion
+      outputParameters:
+      - type: object
+        mapping: $.
