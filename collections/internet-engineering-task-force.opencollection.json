@@ -1,0 +1,201 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IETF Datatracker API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Framework API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Datatracker version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/version"
+          },
+          "docs": "Get Datatracker version"
+        },
+        {
+          "info": {
+            "name": "List resources for a model (Tastypie framework API)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/v1/:model/:resource/",
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "path",
+                "description": "Datatracker model namespace (e.g. doc, group, person, meeting)."
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path",
+                "description": "Resource name within the model namespace."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List resources for a model (Tastypie framework API)"
+        },
+        {
+          "info": {
+            "name": "Get a single resource by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/v1/:model/:resource/:id/",
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single resource by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get document JSON metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/doc/:document/doc.json",
+            "params": [
+              {
+                "name": "document",
+                "value": "",
+                "type": "path",
+                "description": "Document name (e.g., draft-ietf-quic-transport)."
+              }
+            ]
+          },
+          "docs": "Get document JSON metadata"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "IESG",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set an IESG ballot position",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datatracker.ietf.org/api/iesg/position",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Set an IESG ballot position"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set the video URL for a meeting session recording",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datatracker.ietf.org/api/meeting/session/video/url",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Set the video URL for a meeting session recording"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Identity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OpenID Connect issuer configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/openid/"
+          },
+          "docs": "OpenID Connect issuer configuration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
