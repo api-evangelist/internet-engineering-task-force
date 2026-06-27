@@ -35,7 +35,7 @@ apis:
     properties:
       - type: Documentation
         url: https://datatracker.ietf.org/api/
-      - type: SignUp
+      - type: Signup
         url: https://datatracker.ietf.org/accounts/login/
       - url: openapi/internet-engineering-task-force-openapi.yml
         type: OpenAPI
