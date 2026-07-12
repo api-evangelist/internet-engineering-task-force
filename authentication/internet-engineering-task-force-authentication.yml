@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/internet-engineering-task-force-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: query
+  parameter: apikey
+  description: Endpoint-scoped Personal API Key. Each key is valid only for one endpoint.
+  sources:
+  - openapi/internet-engineering-task-force-openapi.yml

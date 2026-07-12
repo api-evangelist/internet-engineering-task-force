@@ -55,6 +55,10 @@ apis:
       - type: Bulk
         url: https://www.rfc-editor.org/in-notes/rfc-index.xml
 common:
+  - type: DomainSecurity
+    url: security/internet-engineering-task-force-domain-security.yml
+  - type: Authentication
+    url: authentication/internet-engineering-task-force-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/internet-engineering-task-force
   - type: Website
@@ -63,6 +67,8 @@ common:
     url: https://github.com/ietf/
   - type: Datatracker
     url: https://datatracker.ietf.org/
+  - url: https://www.ietf.org/blog/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
