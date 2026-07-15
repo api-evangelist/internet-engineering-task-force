@@ -55,6 +55,8 @@ apis:
       - type: Bulk
         url: https://www.rfc-editor.org/in-notes/rfc-index.xml
 common:
+  - type: AgenticAccess
+    url: agentic-access/internet-engineering-task-force-agentic-access.yml
   - type: DomainSecurity
     url: security/internet-engineering-task-force-domain-security.yml
   - type: Authentication
