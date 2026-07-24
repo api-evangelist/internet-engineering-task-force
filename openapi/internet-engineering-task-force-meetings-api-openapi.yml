@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: IETF Datatracker Documents Meetings API
+  description: The IETF Datatracker REST API provides programmatic, read-only access to IETF data including documents, RFCs, drafts, working groups, meetings, IPR disclosures, and IESG ballot positions. Responses are returned as JSON or XML. Public list endpoints under /api/v1/ require no authentication; some privileged write operations require a Personal API Key.
+  version: 1.0.0
+  contact:
+    name: IETF Datatracker
+    url: https://datatracker.ietf.org/
+  license:
+    name: BSD 3-Clause
+    url: https://github.com/ietf/datatracker/blob/main/LICENSE
+  x-generated-from: https://datatracker.ietf.org/api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://datatracker.ietf.org
+  description: IETF Datatracker
+tags:
+- name: Meetings
+paths:
+  /api/meeting/session/video/url:
+    post:
+      tags:
+      - Meetings
+      operationId: setSessionVideoUrl
+      summary: Set the video URL for a meeting session recording
+      security:
+      - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+components:
+  schemas:
+    Resource:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: apikey
+      description: Endpoint-scoped Personal API Key. Each key is valid only for one endpoint.
