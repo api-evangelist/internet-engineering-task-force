@@ -7,7 +7,20 @@ description: >-
   internet interoperability. The IETF Datatracker exposes a public read-only REST API over the working group, document,
   and meeting data managed by the IETF.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/internet-engineering-task-force.png
 tags:
   - Internet
   - Protocols
@@ -19,41 +32,91 @@ created: '2025-08-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: internet-engineering-task-force:ietf-datatracker-api
-    name: IETF Datatracker API
-    description: >-
-      The IETF Datatracker REST API provides programmatic, read-only access to IETF data including documents, RFCs,
-      drafts, working groups, meetings, IPR disclosures, and IESG ballot positions. Responses are returned as JSON or
-      XML. Public endpoints require no authentication.
-    humanURL: https://datatracker.ietf.org/api/
-    baseURL: https://datatracker.ietf.org/api/v1/
-    tags:
-      - Internet
-      - RFC
-      - Standards
-      - Working Groups
-    properties:
-      - type: Documentation
-        url: https://datatracker.ietf.org/api/
-      - type: Signup
-        url: https://datatracker.ietf.org/accounts/login/
-      - url: openapi/internet-engineering-task-force-openapi.yml
-        type: OpenAPI
-  - aid: internet-engineering-task-force:rfc-editor
-    name: RFC Editor
-    description: >-
-      The RFC Editor publishes the canonical RFC series in multiple formats (TXT, HTML, PDF, XML) and provides bulk and
-      machine-readable indexes of RFCs and Internet-Drafts.
-    humanURL: https://www.rfc-editor.org/
-    baseURL: https://www.rfc-editor.org/
-    tags:
-      - RFC
-      - Standards
-    properties:
-      - type: Documentation
-        url: https://www.rfc-editor.org/retrieve/
-      - type: Bulk
-        url: https://www.rfc-editor.org/in-notes/rfc-index.xml
+- aid: internet-engineering-task-force:rfc-editor
+  name: RFC Editor
+  description: >-
+    The RFC Editor publishes the canonical RFC series in multiple formats (TXT, HTML, PDF, XML) and provides
+    bulk and machine-readable indexes of RFCs and Internet-Drafts.
+  humanURL: https://www.rfc-editor.org/
+  baseURL: https://www.rfc-editor.org/
+  tags:
+  - RFC
+  - Standards
+  properties:
+  - type: Documentation
+    url: https://www.rfc-editor.org/retrieve/
+  - type: Bulk
+    url: https://www.rfc-editor.org/in-notes/rfc-index.xml
+- aid: internet-engineering-task-force:internet-engineering-task-force-documents-api
+  name: Internet Engineering Task Force Documents API
+  description: The Documents API from Internet Engineering Task Force — 1 operation(s) for documents.
+  humanURL: https://datatracker.ietf.org/api/
+  baseURL: https://datatracker.ietf.org/api/v1/
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/internet-engineering-task-force-documents-api-openapi.yml
+  - type: Documentation
+    url: https://datatracker.ietf.org/api/
+  - type: Signup
+    url: https://datatracker.ietf.org/accounts/login/
+- aid: internet-engineering-task-force:internet-engineering-task-force-framework-api-api
+  name: Internet Engineering Task Force Framework API API
+  description: Public read-only REST framework over Datatracker models.
+  humanURL: https://datatracker.ietf.org/api/
+  baseURL: https://datatracker.ietf.org/api/v1/
+  tags:
+  - Framework API
+  properties:
+  - type: OpenAPI
+    url: openapi/internet-engineering-task-force-framework-api-api-openapi.yml
+  - type: Documentation
+    url: https://datatracker.ietf.org/api/
+  - type: Signup
+    url: https://datatracker.ietf.org/accounts/login/
+- aid: internet-engineering-task-force:internet-engineering-task-force-identity-api
+  name: Internet Engineering Task Force Identity API
+  description: The Identity API from Internet Engineering Task Force — 1 operation(s) for identity.
+  humanURL: https://datatracker.ietf.org/api/
+  baseURL: https://datatracker.ietf.org/api/v1/
+  tags:
+  - Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/internet-engineering-task-force-identity-api-openapi.yml
+  - type: Documentation
+    url: https://datatracker.ietf.org/api/
+  - type: Signup
+    url: https://datatracker.ietf.org/accounts/login/
+- aid: internet-engineering-task-force:internet-engineering-task-force-iesg-api
+  name: Internet Engineering Task Force IESG API
+  description: The IESG API from Internet Engineering Task Force — 1 operation(s) for iesg.
+  humanURL: https://datatracker.ietf.org/api/
+  baseURL: https://datatracker.ietf.org/api/v1/
+  tags:
+  - IESG
+  properties:
+  - type: OpenAPI
+    url: openapi/internet-engineering-task-force-iesg-api-openapi.yml
+  - type: Documentation
+    url: https://datatracker.ietf.org/api/
+  - type: Signup
+    url: https://datatracker.ietf.org/accounts/login/
+- aid: internet-engineering-task-force:internet-engineering-task-force-meetings-api
+  name: Internet Engineering Task Force Meetings API
+  description: The Meetings API from Internet Engineering Task Force — 1 operation(s) for meetings.
+  humanURL: https://datatracker.ietf.org/api/
+  baseURL: https://datatracker.ietf.org/api/v1/
+  tags:
+  - Meetings
+  properties:
+  - type: OpenAPI
+    url: openapi/internet-engineering-task-force-meetings-api-openapi.yml
+  - type: Documentation
+    url: https://datatracker.ietf.org/api/
+  - type: Signup
+    url: https://datatracker.ietf.org/accounts/login/
 common:
   - type: AgenticAccess
     url: agentic-access/internet-engineering-task-force-agentic-access.yml
