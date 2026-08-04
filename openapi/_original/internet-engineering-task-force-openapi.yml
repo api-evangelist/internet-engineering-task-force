@@ -1,0 +1,207 @@
+openapi: 3.1.0
+info:
+  title: IETF Datatracker API
+  description: >-
+    The IETF Datatracker REST API provides programmatic, read-only access to
+    IETF data including documents, RFCs, drafts, working groups, meetings, IPR
+    disclosures, and IESG ballot positions. Responses are returned as JSON or
+    XML. Public list endpoints under /api/v1/ require no authentication; some
+    privileged write operations require a Personal API Key.
+  version: 1.0.0
+  contact:
+    name: IETF Datatracker
+    url: https://datatracker.ietf.org/
+  license:
+    name: BSD 3-Clause
+    url: https://github.com/ietf/datatracker/blob/main/LICENSE
+  x-generated-from: https://datatracker.ietf.org/api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://datatracker.ietf.org
+    description: IETF Datatracker
+tags:
+  - name: Framework API
+    description: Public read-only REST framework over Datatracker models.
+  - name: Documents
+  - name: IESG
+  - name: Meetings
+  - name: Identity
+paths:
+  /api/version:
+    get:
+      tags: [Framework API]
+      operationId: getVersion
+      summary: Get Datatracker version
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+  /api/v1/{model}/{resource}/:
+    get:
+      tags: [Framework API]
+      operationId: listResource
+      summary: List resources for a model (Tastypie framework API)
+      parameters:
+        - name: model
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Datatracker model namespace (e.g. doc, group, person, meeting).
+        - name: resource
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Resource name within the model namespace.
+        - name: format
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [json, xml]
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResponse'
+            application/xml:
+              schema:
+                type: string
+  /api/v1/{model}/{resource}/{id}/:
+    get:
+      tags: [Framework API]
+      operationId: getResource
+      summary: Get a single resource by ID
+      parameters:
+        - name: model
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: resource
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+  /doc/{document}/doc.json:
+    get:
+      tags: [Documents]
+      operationId: getDocumentJson
+      summary: Get document JSON metadata
+      parameters:
+        - name: document
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Document name (e.g., draft-ietf-quic-transport).
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+  /api/iesg/position:
+    post:
+      tags: [IESG]
+      operationId: setIesgPosition
+      summary: Set an IESG ballot position
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+  /api/meeting/session/video/url:
+    post:
+      tags: [Meetings]
+      operationId: setSessionVideoUrl
+      summary: Set the video URL for a meeting session recording
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+  /api/openid/:
+    get:
+      tags: [Identity]
+      operationId: getOpenIdConfig
+      summary: OpenID Connect issuer configuration
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: apikey
+      description: Endpoint-scoped Personal API Key. Each key is valid only for one endpoint.
+  schemas:
+    Resource:
+      type: object
+      additionalProperties: true
+    ListResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          additionalProperties: true
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'

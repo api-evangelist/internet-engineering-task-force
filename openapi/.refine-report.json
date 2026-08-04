@@ -1,0 +1,22 @@
+{
+  "provider": "internet-engineering-task-force",
+  "sources": [
+    "internet-engineering-task-force-documents-api-openapi.yml",
+    "internet-engineering-task-force-framework-api-api-openapi.yml",
+    "internet-engineering-task-force-identity-api-openapi.yml",
+    "internet-engineering-task-force-iesg-api-openapi.yml",
+    "internet-engineering-task-force-meetings-api-openapi.yml"
+  ],
+  "outputs": [
+    "internet-engineering-task-force-documents-api-openapi.yml",
+    "internet-engineering-task-force-framework-api-api-openapi.yml",
+    "internet-engineering-task-force-identity-api-openapi.yml",
+    "internet-engineering-task-force-iesg-api-openapi.yml",
+    "internet-engineering-task-force-meetings-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
