@@ -1,0 +1,103 @@
+{
+  "item": [
+    {
+      "id": "93eee7a0-0299-4ff2-b052-50c7ae9aae02",
+      "name": "Identity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "25f13592-11dc-43e4-9e99-73b5695b835f",
+          "name": "OpenID Connect issuer configuration",
+          "request": {
+            "name": "OpenID Connect issuer configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "openid",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a953b2f7-f586-49a6-8890-5a4ec1899cee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "openid",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://datatracker.ietf.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c9684aad-391c-4375-af49-99bc8d02c20d",
+    "name": "IETF Datatracker Documents Identity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IETF Datatracker REST API provides programmatic, read-only access to IETF data including documents, RFCs, drafts, working groups, meetings, IPR disclosures, and IESG ballot positions. Responses are returned as JSON or XML. Public list endpoints under /api/v1/ require no authentication; some privileged write operations require a Personal API Key.\n\nContact Support:\n Name: IETF Datatracker",
+      "type": "text/plain"
+    }
+  }
+}

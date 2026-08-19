@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IETF Datatracker Documents Framework API API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Framework API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Datatracker version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/version"
+          },
+          "docs": "Get Datatracker version"
+        },
+        {
+          "info": {
+            "name": "List resources for a model (Tastypie framework API)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/v1/:model/:resource/",
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "path",
+                "description": "Datatracker model namespace (e.g. doc, group, person, meeting)."
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path",
+                "description": "Resource name within the model namespace."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List resources for a model (Tastypie framework API)"
+        },
+        {
+          "info": {
+            "name": "Get a single resource by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datatracker.ietf.org/api/v1/:model/:resource/:id/",
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single resource by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

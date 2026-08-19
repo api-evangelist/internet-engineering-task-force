@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IETF Datatracker Documents Meetings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set the video URL for a meeting session recording",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datatracker.ietf.org/api/meeting/session/video/url",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Set the video URL for a meeting session recording"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

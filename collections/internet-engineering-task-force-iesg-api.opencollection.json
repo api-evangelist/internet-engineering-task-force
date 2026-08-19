@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IETF Datatracker Documents IESG API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IESG",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set an IESG ballot position",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datatracker.ietf.org/api/iesg/position",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Set an IESG ballot position"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
