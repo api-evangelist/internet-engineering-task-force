@@ -30,7 +30,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/internet-engineering-task-force/refs/heads/main/apis.yml
 created: '2025-08-25'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: internet-engineering-task-force:rfc-editor
   name: RFC Editor
