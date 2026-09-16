@@ -1,11 +1,10 @@
 aid: internet-engineering-task-force
 name: Internet Engineering Task Force
-description: >-
-  The Internet Engineering Task Force (IETF) is an open, global community of network designers, engineers, researchers,
-  and operators that develops and promotes voluntary technical standards to ensure the smooth operation and evolution of
-  the internet. The IETF publishes freely accessible RFCs (Requests for Comments) that serve as the foundation for
-  internet interoperability. The IETF Datatracker exposes a public read-only REST API over the working group, document,
-  and meeting data managed by the IETF.
+description: The Internet Engineering Task Force (IETF) is an open, global community of network designers,
+  engineers, researchers, and operators that develops and promotes voluntary technical standards to ensure
+  the smooth operation and evolution of the internet. The IETF publishes freely accessible RFCs (Requests
+  for Comments) that serve as the foundation for internet interoperability. The IETF Datatracker exposes
+  a public read-only REST API over the working group, document, and meeting data managed by the IETF.
 type: Index
 deliveryModel:
   model: saas
@@ -35,21 +34,20 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/internet-engineering-task-force.png
 tags:
-  - Internet
-  - Protocols
-  - RFC
-  - Standards
-  - Working Groups
+- Internet
+- Protocols
+- RFC
+- Standards
+- Working Groups
 url: https://raw.githubusercontent.com/api-evangelist/internet-engineering-task-force/refs/heads/main/apis.yml
 created: '2025-08-25'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: internet-engineering-task-force:rfc-editor
   name: RFC Editor
-  description: >-
-    The RFC Editor publishes the canonical RFC series in multiple formats (TXT, HTML, PDF, XML) and provides
-    bulk and machine-readable indexes of RFCs and Internet-Drafts.
+  description: The RFC Editor publishes the canonical RFC series in multiple formats (TXT, HTML, PDF,
+    XML) and provides bulk and machine-readable indexes of RFCs and Internet-Drafts.
   humanURL: https://www.rfc-editor.org/
   baseURL: https://www.rfc-editor.org/
   tags:
@@ -75,7 +73,7 @@ apis:
   - type: Signup
     url: https://datatracker.ietf.org/accounts/login/
 - aid: internet-engineering-task-force:internet-engineering-task-force-framework-api-api
-  name: Internet Engineering Task Force Framework API API
+  name: Internet Engineering Task Force Framework API
   description: Public read-only REST framework over Datatracker models.
   humanURL: https://datatracker.ietf.org/api/
   baseURL: https://datatracker.ietf.org/api/v1/
@@ -131,22 +129,22 @@ apis:
   - type: Signup
     url: https://datatracker.ietf.org/accounts/login/
 common:
-  - type: AgenticAccess
-    url: agentic-access/internet-engineering-task-force-agentic-access.yml
-  - type: DomainSecurity
-    url: security/internet-engineering-task-force-domain-security.yml
-  - type: Authentication
-    url: authentication/internet-engineering-task-force-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/internet-engineering-task-force
-  - type: Website
-    url: https://www.ietf.org/
-  - type: GitHubOrganization
-    url: https://github.com/ietf/
-  - type: Datatracker
-    url: https://datatracker.ietf.org/
-  - url: https://www.ietf.org/blog/feed/
-    type: Blog
+- type: AgenticAccess
+  url: agentic-access/internet-engineering-task-force-agentic-access.yml
+- type: DomainSecurity
+  url: security/internet-engineering-task-force-domain-security.yml
+- type: Authentication
+  url: authentication/internet-engineering-task-force-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/internet-engineering-task-force
+- type: Website
+  url: https://www.ietf.org/
+- type: GitHubOrganization
+  url: https://github.com/ietf/
+- type: Datatracker
+  url: https://datatracker.ietf.org/
+- url: https://www.ietf.org/blog/feed/
+  type: Blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
