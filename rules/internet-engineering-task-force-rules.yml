@@ -1,12 +1,12 @@
-aid: internet-engineering-task-force
-name: Internet Engineering Task Force Rules
+x-aid: internet-engineering-task-force
+x-name: Internet Engineering Task Force Rules
 description: >-
   Validation, governance, and operational rules applied to the IETF APIs.json
   index and any associated machine-readable artifacts.
-type: standard
-profile:
+x-type: standard
+x-profile:
   - apis.json
-governance:
+x-governance:
   source: api-evangelist
   steward: Kin Lane
   visibility: public

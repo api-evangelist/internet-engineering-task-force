@@ -1,22 +1,28 @@
 {
   "provider": "internet-engineering-task-force",
   "sources": [
-    "internet-engineering-task-force-documents-api-openapi.yml",
-    "internet-engineering-task-force-framework-api-api-openapi.yml",
-    "internet-engineering-task-force-identity-api-openapi.yml",
-    "internet-engineering-task-force-iesg-api-openapi.yml",
-    "internet-engineering-task-force-meetings-api-openapi.yml"
+    "_ae-authored/internet-engineering-task-force-openapi.yml"
   ],
   "outputs": [
     "internet-engineering-task-force-documents-api-openapi.yml",
     "internet-engineering-task-force-framework-api-api-openapi.yml",
-    "internet-engineering-task-force-identity-api-openapi.yml",
     "internet-engineering-task-force-iesg-api-openapi.yml",
+    "internet-engineering-task-force-identity-api-openapi.yml",
     "internet-engineering-task-force-meetings-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "internet-engineering-task-force-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "internet-engineering-task-force-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "internet-engineering-task-force-framework-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "internet-engineering-task-force-identity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "internet-engineering-task-force-iesg-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "internet-engineering-task-force-meetings-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
