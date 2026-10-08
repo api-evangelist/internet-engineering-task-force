@@ -135,6 +135,12 @@ apis:
   - type: Signup
     url: https://datatracker.ietf.org/accounts/login/
 common:
+- type: Plans
+  url: plans/internet-engineering-task-force-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/internet-engineering-task-force-rate-limits.yml
+- type: FinOps
+  url: finops/internet-engineering-task-force-finops.yml
 - type: AgenticAccess
   url: agentic-access/internet-engineering-task-force-agentic-access.yml
 - type: DomainSecurity
